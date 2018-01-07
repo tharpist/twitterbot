@@ -15,8 +15,7 @@ var params = {
 //This Program Will Tweet Something and then favorite some tweets
 
 //Tweet Something
- status = 'This is a test OK'
-T.post('statuses/update', {status: 'This is another test'})
+T.post('statuses/update', {status: 'I BROKE IT'})
   .then(function (tweet) {
     console.log(tweet);
   })
