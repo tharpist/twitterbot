@@ -12,6 +12,21 @@ var params = {
   lang: 'en'
 }
 
+//This Program Will Tweet Something and then favorite some tweets
+
+//Tweet Something
+ status = 'This is a test OK'
+T.post('statuses/update', {status: 'This is another test'})
+  .then(function (tweet) {
+    console.log(tweet);
+  })
+  .catch(function (error) {
+    throw error;
+  })
+
+
+/*
+//Favorite Something
 // Initiate your search using the above paramaters
 T.get('search/tweets', params, function(err, data, response) {
   // If there is no error, proceed
@@ -38,3 +53,5 @@ T.get('search/tweets', params, function(err, data, response) {
     console.log(err);
   }
 })
+
+*/
