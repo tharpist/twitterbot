@@ -21,6 +21,26 @@ charset: 'alphabetic'
 });
 
 
+//is it a word
+var dictionary = require('dictionary-en-us');
+var nspell = require('nspell');
+ 
+dictionary(function (err, dict) {
+  if (err) {
+    throw err;
+  }
+ 
+  var spell = nspell(dict);
+var isword = " IS A WORD!";
+var notword =" IS  NOT A WORD";
+if (spell.correct(test)== true){
+  var  twitterstatus = test.concat(isword);
+} else {
+        var twitterstatus = test.concat(notword);
+}
+
+
+
 
 
 
@@ -29,10 +49,10 @@ charset: 'alphabetic'
 
 //Tweet Something
 
-T.post('statuses/update', {status:test},   function(error, tweet, response) {
+T.post('statuses/update', {status:twitterstatus},   function(error, tweet, response) {
   if (!error) {
     console.log(tweet);
   }
 });
 
-
+});
