@@ -3,10 +3,22 @@
 var Twitter = require('twitter');
 var config = require('./config.js');
 var T = new Twitter(config);
-var randomnumber  = require("randomnumber");
-randomnumber.generate();
+
+
+//Random number
+var randomnumber = require("randomstring");
+var number = randomnumber.generate({
+charset: 'numeric',
+length: 2
+});
+
+//Random String
 var  randomstring = require("randomstring");
-var test =randomstring.generate(randomnumber);
+var test = randomstring.generate({
+length: number,
+capitalization: 'lowercase',
+charset: 'alphabetic'
+});
 
 
 
