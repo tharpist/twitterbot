@@ -32,20 +32,15 @@ dictionary(function (err, dict) {
  
   var spell = nspell(dict);
 var isword = " IS A WORD!";
-var notword =" IS  NOT A WORD";
+var notword =" IS  NOT A WORD!";
+var isblank= " The length of the random string is 0... There cannot be a word!";
 if (spell.correct(test)== true){
   var  twitterstatus = test.concat(isword);
-} else {
-        var twitterstatus = test.concat(notword);
+} else  if (test==""){
+	var twitterstatus = isblank
+}else {
+      var  twitterstatus = test.concat(notword);
 }
-
-
-
-
-
-
-
-
 
 //Tweet Something
 
@@ -54,5 +49,4 @@ T.post('statuses/update', {status:twitterstatus},   function(error, tweet, respo
     console.log(tweet);
   }
 });
-
 });
